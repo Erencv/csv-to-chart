@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/csv-to-chart/static/js/main.bbf9f15e.js",
+    "index.html": "/csv-to-chart/index.html",
+    "main.bbf9f15e.js.map": "/csv-to-chart/static/js/main.bbf9f15e.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.bbf9f15e.js"
+  ]
+}

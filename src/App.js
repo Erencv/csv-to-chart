@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import FileUpload from './components/FileUpload';
+import ChartDisplay from './components/ChartDisplay';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [chartData, setChartData] = useState(null);
+
+    const handleFileUpload = (data) => {
+        setChartData(data);
+    };
+
+    return (
+        <div>
+            <h1>CSV to Chart</h1>
+            <p>Your csv format should exactly be like the following: Brand,Model,Liters,Price,Sales Units,Height,Width,Depth
+            </p>
+            <FileUpload onFileUpload={handleFileUpload} />
+            {chartData && <ChartDisplay chartData={chartData} />}
+        </div>
+    );
 }
 
 export default App;
